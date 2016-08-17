@@ -1,0 +1,90 @@
+% !Mode:: "TeX:UTF-8"
+%!TEX program = xelatex
+
+
+\documentclass[a4paper, 10pt, twocolumn]{scrartcl}
+
+% Mathematics
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+% \numberwithin{equation}{subsection}
+
+% Font and Style
+\usepackage{ucs}
+\usepackage[T1]{fontenc}
+\usepackage{abstract}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{listings}
+\hypersetup{colorlinks=false}
+
+% Font Package (select one)
+\usepackage{lmodern}
+% \usepackage{kpfonts}
+% \usepackage{ccfonts}
+%\usepackage{cmbright}
+%\usepackage{antpolt}
+% \usepackage{iwona}
+
+\bibliographystyle{plain}
+
+% Image and Graphics
+\usepackage{graphicx}
+\usepackage{dblfloatfix}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=3cm]{geometry}
+  \setlength{\columnsep}{15pt}
+
+\newcommand{\bra}[1]{|{#1} \rangle}
+\newcommand{\ket}[1]{\langle {#1}|}
+\newcommand{\im}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\I}{\begin{pmatrix*}[r] 1 &  0 \\ 0 & 1 \end{pmatrix*}}
+\newcommand{\X}{\begin{pmatrix*}[r] 0 &  1 \\ 1 & 0 \end{pmatrix*}}
+\newcommand{\Y}{\begin{pmatrix*}[r] 0 &  -\im \\ \im & 0 \end{pmatrix*}}
+\newcommand{\Z}{\begin{pmatrix*}[r] 1 &  0 \\ 0 & -1 \end{pmatrix*}}
+\newcommand{\Had}{\frac{1}{\sqrt{2}} (X+Z) = \begin{pmatrix*}[r] 1 &  1 \\ 1 & -1 \end{pmatrix*}}
+\newcommand{\qubit}{\begin{pmatrix*}[r] a\\b \end{pmatrix*}}
+\newcommand{\CNOT}{\begin{pmatrix*}[r] 1 & 0 & 0 & 0 \\ 
+                                       0 & 1 & 0 & 0 \\
+                                       0 & 0 & 0 & 1 \\
+                                       0 & 0 & 1 & 0 \end{pmatrix*}}
+
+\renewcommand*{\Authand}{\quad}
+\renewcommand{\abstractname}{}
+\renewcommand{\absnamepos}{empty}
+\renewcommand\Affilfont{\fontsize{9}{10.8}\itshape}
+\renewcommand\Authfont{\fontsize{12}{14.4}\selectfont}
+% Document Information
+\title{Implementation and Simulation of \\ Quantum Teleportation}
+% \subtitle{Further specification goes here}
+\author[*]{Student: Chen Xin}
+\author[*]{Advisor: Li-Xiang Cen}
+\affil[*]{\emph{College of Phsical Science and Technology, Sichuan University}}
+\date{\vspace{-7ex}}
+
+
+
+\begin{document}
+  % Create Title, Abstract and TOC
+  \twocolumn[\maketitle \begin{abstract} \centering \begin{minipage}{1.0\linewidth}
+  The basic principle of quantum teleportation (QT) is reviewed first in the introduction, 
+  and then some simple quantum gates which are necessary for QT are introduced in section 1. Next in section 2, we clarify how one could construct and measure a Bell state and relevant quantum circuits are illustrated. Finally, with all conceptions clear, 
+  a program for simulation of QT is shown to testify the quantum circuit really works.
+
+
+  \vspace{0.8cm}
+  \end{minipage}\end{abstract}]
+  % \tableofcontents
+
+  % CONTENT
+  \input{content.tex}
+  % Input your source files here
+  % Bibliography
+  \bibliography{bib/bibliography.bib}
+\end{document}
